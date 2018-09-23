@@ -250,11 +250,11 @@ Validation is provided by the [Joi](https://github.com/hapijs/joi/) library.  Ce
 Relationships can be created in the schema or defined retrospectively.
 
 ```javascript
-instance.model(label).relationship(type, relationship, direction, label, schema);
+instance.model(label).relationship(name, type, relationship, direction, label, schema, eager, cascade, node_alias);
 ```
 
 ```javascript
-instance.model('Person').relationship('knows', 'KNOWS', 'out', 'Person', {
+instance.model('Person').relationship('knows', 'KNOWS', 'relationship', 'out', 'Person', {
     since: {
         type: 'number',
         required: true,
